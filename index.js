@@ -44,7 +44,7 @@ client.on('message', msg => {
 					break;
 				}
 			}
-			if (split[i].includes('up')){
+			else if (split[i].includes('up')){
 				gas = gas - 10;
 				food = food - 4;
 				drink = drink - 6;
@@ -55,17 +55,7 @@ client.on('message', msg => {
 					break;
 				}
 			}
-			if (split[i].includes('right')){
-				gas = gas - 10;
-				food = food - 4;
-				drink = drink - 6;
-				entertainment = entertainment - 8;
-				time = time - 4;
-				checkValues(msg, i);
-				if (exitvar === 1){
-					break;
-				}
-			}if (split[i].includes('left')){
+			else if (split[i].includes('right')){
 				gas = gas - 10;
 				food = food - 4;
 				drink = drink - 6;
@@ -76,7 +66,18 @@ client.on('message', msg => {
 					break;
 				}
 			}
-			if (split[i].includes('down')){
+			else if (split[i].includes('left')){
+				gas = gas - 10;
+				food = food - 4;
+				drink = drink - 6;
+				entertainment = entertainment - 8;
+				time = time - 4;
+				checkValues(msg, i);
+				if (exitvar === 1){
+					break;
+				}
+			}
+			else if (split[i].includes('down')){
 				gas = gas - 10;
 				food = food - 4;
 				drink = drink - 6;
