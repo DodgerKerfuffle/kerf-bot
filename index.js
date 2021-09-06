@@ -28,7 +28,13 @@ client.on('message', msg => {
 		entertainment = 75;
 		time = 100;
 		exitvar = 0;
-		if (split.length < 25 || split.length > 25){
+		var home = 0;
+		for (let i = 0; i < split.length; i++){
+			if (split[i].includes('home')){
+				home++;
+			}
+		}
+		if (split.length !== 25 && home === 0){
 			msg.reply('Please put in 25 moves');
 		}
 		else{
@@ -233,7 +239,7 @@ client.on('message', msg => {
 				food = food - 4;
 				drink = drink - 6;
 				entertainment = entertainment - 8;
-				time = time - 4;
+				time = 0;
 				checkValues(msg, i);
 				if (exitvar === 1){
 					break;
