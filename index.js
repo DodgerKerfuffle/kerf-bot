@@ -19,9 +19,10 @@ var entertainment = 75;
 var time = 100;
 var exitvar = 0;
 client.on('message', msg => {
-	if (!msg.content.startsWith(prefix)) return;
-	if (msg.content.startsWith(prefix + 'date')){
-		var split = msg.toString().replace('kerfdate','').split(',')
+	var lowerMsg = msg.content.toLowerCase();
+	if (!lowerMsg.startsWith(prefix)) return;
+	if (lowerMsg.startsWith(prefix + 'date')){
+		var split = lowerMsg.toString().replace('kerfdate','').split(',')
 		gas = 100;
 		food = 50;
 		drink = 50;
@@ -290,4 +291,4 @@ function checkValues(msg, i){
 }
 
 // Login to Discord with your client's token
-client.login(process.env.BOT_TOKEN);
+client.login('ODg0MTA0Mjc5NTY3MjU3Njgy.YTToRg.EjFP8XfskyWjo07C7MZZQPYR9TU');
