@@ -291,4 +291,4 @@ function checkValues(msg, i){
 }
 
 // Login to Discord with your client's token
-client.login('ODg0MTA0Mjc5NTY3MjU3Njgy.YTToRg.EjFP8XfskyWjo07C7MZZQPYR9TU');
+client.login(process.env.BOT_TOKEN);
