@@ -261,7 +261,7 @@ function checkValues(msg, i){
 	if (entertainment >= 100){
 		entertainment = 100;
 	}
-	if (time === 0){
+	if (time === 0 && gas > 0 && food > 0 && drink > 0 && entertainment > 0){
 		msg.reply(`Successful date with the following stats:\nGas: ${gas}\nFood: ${food}\nDrink: ${drink}\nEntertainment: ${entertainment}`);
 		exitvar = 1;
 	}
