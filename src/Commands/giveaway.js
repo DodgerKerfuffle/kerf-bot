@@ -29,7 +29,7 @@ module.exports = {
             exemptMembers: new Function('member', `return !member.roles.cache.some((r) => r.name === \'${roleName.name}\')`),
             messages: {
                 giveaway: " ",
-                giveawayEnd: " ",
+                giveawayEnded: " ",
                 drawing: "Ending {timestamp}",
                 inviteToParticipate: "React with 🎉 to join the giveaway",
                 winMessage: "Congrats {winners}, you have won the giveaway",
