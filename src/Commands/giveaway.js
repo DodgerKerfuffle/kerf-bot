@@ -6,14 +6,16 @@ module.exports = {
     run : async(message, args, client) => {
         if(!message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return message.channel.send('You dont have manage messages permission.')
         
-        message.delete();
+        message.delete().catch(err => {
+            console.log(err)
+        });
         const duration = args[1]
         if(!duration) return message.channel.send('please enter a valid duration')
 
         const winners = args[2]
         if(Number.isNaN(+winners)) return message.channel.send('Please specify an amount of winners')
 
-        const roleName = message.guild.roles.cache.find(role => role.name.includes(args[3]));
+        const roleName = message.guild.roles.cache.find(role => role.name.toLowerCase().includes(args[3].toLowerCase()));
         if (!roleName) return message.channel.send('Please specify a role');
 
         const prize = args.slice(4).join(" ")
