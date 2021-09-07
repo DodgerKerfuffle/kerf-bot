@@ -12,13 +12,13 @@ const client = new Client();
 const fs = require('fs');
 
 client.giveaways = new GiveawaysManager(client, {
-	storage : './giveaways.json',
+	storage : './src/giveaways.json',
 	updateCountdownEvery: 5000,
 	embedColor: '#ff0000',
 	reaction : 'tada'
 })
 
-fs.readdirSync("./Commands")
+fs.readdirSync("./src/Commands")
 	.filter(file => file.endsWith(".js"))
 	.forEach(file => {
 		/**
