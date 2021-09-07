@@ -1,1 +1,1 @@
-Simple bot for solving dates in Karuta
+Simple bot for solving dates in Karuta + new features to come
