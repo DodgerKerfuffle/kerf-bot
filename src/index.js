@@ -12,13 +12,13 @@ const client = new Client();
 const fs = require('fs');
 
 client.giveaways = new GiveawaysManager(client, {
-	storage : './giveaways.json',
+	storage : './src/giveaways.json',
 	updateCountdownEvery: 5000,
 	embedColor: '#ff0000',
 	reaction : 'tada'
 })
 
-fs.readdirSync("./Commands")
+fs.readdirSync("./src/Commands")
 	.filter(file => file.endsWith(".js"))
 	.forEach(file => {
 		/**
@@ -51,4 +51,4 @@ client.on('message', msg => {
 
 
 // Login to Discord with your client's token
-client.login('ODg0MTA0Mjc5NTY3MjU3Njgy.YTToRg.up0_bcuSxu1Kpsn-1_JZDWzXKCI');
+client.login(process.env.BOT_TOKEN);
