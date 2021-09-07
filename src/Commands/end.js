@@ -8,7 +8,9 @@ module.exports = {
         if(!message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return message.channel.send('You do not have permissions to use this command')
         if(!args[1]) return message.channel.send('Please specify a message id')
 
-        message.delete();
+        message.delete().catch(err => {
+            console.log(err)
+        });
         client.giveaways.end(args[1])
         .catch(err => {
             console.log(err)

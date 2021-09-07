@@ -48,7 +48,24 @@ client.on('message', msg => {
 	command.run(msg, args, client);
 });
 
+ client.giveaways.on('giveawayEnded', (giveaway, winners) => {
+	winners.forEach((member) => {
+	member.send('Congratulations ' + member.user.username + '! You won: **' + giveaway.prize + '**\n' + giveaway.messageURL);
+       });
+ });
 
+client.giveaways.on('giveawayRerolled', (giveaway, winners) => {
+	winners.forEach((member) => {
+		member.send('Congratulations ' + member.user.username + '! You won: **' + giveaway.prize + '**\n' + giveaway.messageURL);
+      });
+});
+
+client.giveaways.on('giveawayReactionAdded', (giveaway, member, reaction) => {
+	if (!member.roles.cache.get(giveaway.extraData.role)) {
+		console.log(giveaway.role)
+  reaction.users.remove(member.user);
+      }
+  });
 
 // Login to Discord with your client's token
-client.login(process.env.BOT_TOKEN);
+client.login('ODg0MTA0Mjc5NTY3MjU3Njgy.YTToRg.V67cs-qvuQaUqKVz7hy7Zzfk2wE');

@@ -27,12 +27,14 @@ module.exports = {
             winnerCount: parseInt(winners),
             hostedBy: message.author,
             exemptMembers: new Function('member', `return !member.roles.cache.some((r) => r.name === \'${roleName.name}\')`),
+            extraData: {
+                role: roleName.id
+            },
             messages: {
                 giveaway: " ",
                 giveawayEnded: " ",
                 drawing: "Ending {timestamp}",
                 inviteToParticipate: "React with 🎉 to join the giveaway",
-                winMessage: "Congrats {winners}, you have won the giveaway",
                 embedFooter: `${winners} winner(s)`,
                 noWinner: "Could not determine a winner",
                 hostedBy: `Required Role: <@&${roleName.id}>\nHosted by ${message.author}`,
