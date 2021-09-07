@@ -68,4 +68,4 @@ client.giveaways.on('giveawayReactionAdded', (giveaway, member, reaction) => {
   });
 
 // Login to Discord with your client's token
-client.login('ODg0MTA0Mjc5NTY3MjU3Njgy.YTToRg.V67cs-qvuQaUqKVz7hy7Zzfk2wE');
+client.login(process.env.BOT_TOKEN);
